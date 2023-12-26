@@ -64,7 +64,7 @@ class User extends Authenticatable
     }
 
     public function studentInfo(){
-        return $this->hasOne(studentInfo::class);
+        return $this->hasOne(StudentInfo::class);
     }
 
    

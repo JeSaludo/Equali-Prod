@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('option', function (Blueprint $table) {
+        Schema::table('options', function (Blueprint $table) {
             $table->dropColumn('number_of_qualified');
         });
     }
