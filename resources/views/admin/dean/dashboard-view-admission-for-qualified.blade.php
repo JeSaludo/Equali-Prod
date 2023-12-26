@@ -12,7 +12,19 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@100;300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap"
             rel="stylesheet">
-        @vite('resources/css/app.css')
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    fontFamily: {
+                        open: '"Open Sans"',
+                        poppins: "'Poppins', sans-serif",
+                        raleway: "'Raleway', sans-serif",
+                    },
+                    extend: {},
+                }
+            }
+        </script>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
@@ -58,7 +70,7 @@
                                 <tr>
                                     <td class="px-6 py-2">ID</td>
                                     <td class="px-6 py-2">Applicant Name</td>
-                                  
+
                                     <td class="px-6 py-2">Status</td>
                                     <td class="px-6 py-2">Action</td>
                                 </tr>
@@ -81,8 +93,8 @@
                                             class="{{ $index % 2 == 0 ? 'bg-[#F6F8FF]' : 'bg-white' }} border-b border-gray-100">
                                             <td class="px-6 py-3">{{ $user->id }}</td>
                                             <td class="px-6 py-3">{{ $user->last_name . ', ' . $user->first_name }}</td>
-                                           
-                                           
+
+
                                             <td class="px-6 py-3">
                                                 @if ($user->status == 'WaitListed')
                                                     <span
